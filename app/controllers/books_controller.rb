@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class BooksController < ApplicationController
-  def index; end
+  def index
+    @user = User.all.last
+  end
 end

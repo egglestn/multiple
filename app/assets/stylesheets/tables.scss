@@ -1,23 +1,22 @@
-tbody tr:nth-child(4n-2) {
+tbody tr:nth-child(odd) {
   background: $lightgrey;
 }
 
 th, td {
   font-size: 14px;
-  width: 130px;
   text-align: center;
-  padding: 5px 0;
+  padding: 5px 10px;
   word-break: break-word;
 }
 
 td.first {
   font-size: 15px;
   font-weight: bold;
-  width: 135px;
   padding-left: 4px;
+  text-align: left;
 }
 
-.user-score {
+.book-score {
   cursor: pointer;
   padding: 2px;
 
@@ -34,78 +33,5 @@ td.first {
     content: "\2605";
     color: green;
     position: absolute;
-  }
-
-  input[type="radio"] {
-    //display: none;
-  }
-}
-
-.questions .first {
-  text-align: left;
-}
-
-.summary {
-  h3 {
-    margin-bottom: 5px;
-  }
-
-  tr:nth-child(even) {
-    background: $lightgrey;
-  }
-}
-
-.full-data {
-  .subheader {
-    text-align: left;
-  }
-
-  th:not(.first) {
-    writing-mode: tb-rl;
-  }
-
-  tbody tr:nth-child(odd) {
-    background: $lightgrey;
-  }
-
-  tbody tr:nth-child(even) {
-    background: white;
-  }
-
-  td {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 600;
-  }
-
-  td.zero {
-    color: red;
-
-    &::before {
-      content: "\f0e7 \f0e7";
-    }
-  }
-
-  td.one {
-    color: red;
-
-    &::before {
-      content: "\f0e7";
-    }
-  }
-
-  td.three {
-    color: green;
-
-    &::before {
-      content: "\f479";
-    }
-  }
-
-  td.four {
-    color: green;
-
-    &::before {
-      content: "\f479 \f479";
-    }
   }
 }

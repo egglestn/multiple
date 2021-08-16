@@ -1,0 +1,14 @@
+<h3>My choices</h3>
+
+<table>
+  <% @books.each do |book| %>
+    <tr>
+      <td class="first"><%= book %></td>
+      <td><%= @user.books_users.where(book_id: book.id).first&.score %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h3>Reset choices and score again</h3>
+<p><%= link_to "Collection radio buttons", edit_user_path(@user, form: :a) %></p>
+<p><%= link_to "Styled radio buttons", edit_user_path(@user, form: :b) %></p>

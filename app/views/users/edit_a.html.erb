@@ -1,0 +1,28 @@
+<h3>Collection radio buttons</h3>
+
+<%= form_for(@user, html: { method: :put }) do |f| %>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Score</th>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <%= f.fields_for "books_user][#{book.id}" do |ff| %>
+          <tr>
+            <td class="first"><%= book %></td>
+            <td>
+              <%= ff.collection_radio_buttons :score, BooksUser.scores, :last, :last, boolean_style: :inline do |rb| %>
+                <span title=<%= rb.object[0].humanize %>><%= rb.radio_button %></span>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= f.submit "Save", class: :btn %>
+  </div>
+<% end %>
