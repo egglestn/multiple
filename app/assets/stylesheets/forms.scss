@@ -1,0 +1,45 @@
+select {
+  padding: 4px;
+  border-radius: 0;
+  border-width: 1px;
+  margin-top: 4px;
+  background-color: $lightgrey;
+}
+
+select {
+  min-width: 180px;
+}
+
+label {
+  width: 110px;
+  display: inline-block;
+}
+
+.summary {
+  height: 100%;
+
+  label {
+    width: 230px;
+  }
+}
+
+.actions {
+  width: 100%;
+  margin: 20px 0;
+}
+
+a, .btn {
+  cursor: pointer;
+  font-size: 18px;
+  border: 2px solid grey;
+  padding: 4px;
+  border-radius: 5px;
+  color: black;
+  text-decoration: none;
+  line-height: 35px;
+
+  &:hover {
+    color: white;
+    background-color: grey;
+  }
+}
