@@ -1,1 +1,33 @@
-<h3>Todo</h3>
+<h3>Styled radio buttons</h3>
+
+<%= form_for(@user, html: { method: :put }) do |f| %>
+  <table class="stars">
+    <thead>
+      <th>Name</th>
+      <th>Score</th>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <%= f.fields_for "books_user][#{book.id}" do |ff| %>
+          <tr>
+            <td class="first"><%= book %></td>
+            <td class="book-score" book=<%= book.id %>>
+              <% star = "☆" %>
+              <!-- CSS uses right-to-left, so the star index numbers need to be reversed -->
+              <% star_index = 4 %>
+              <% 5.times do %>
+                <span class="star" onClick="clickStar()" score=<%= star_index %> ><%= star %></span>
+                <% star_index -= 1 %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= f.submit "Save", class: :btn %>
+  </div>
+<% end %>
+

@@ -16,17 +16,25 @@ td.first {
   text-align: left;
 }
 
-.book-score {
-  cursor: pointer;
-  padding: 2px;
+.stars {
+  .book-score {
+    cursor: pointer;
+    padding: 2px;
 
-  unicode-bidi: bidi-override;
-  direction: rtl;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
 
   .star {
     width: unset;
-    font-size: 19px;
+    font-size: 20px;
     padding: 2px;
+  }
+
+  .star.scored:before {
+    content: "\2605";
+    color: green;
+    position: absolute;
   }
 
   .star:hover:before, .star:hover ~ span:before {
@@ -35,3 +43,4 @@ td.first {
     position: absolute;
   }
 }
+
