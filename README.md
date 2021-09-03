@@ -2,7 +2,7 @@
 
 This is a small example project that shows two ways to 
 build multiple radio buttons. You could use this where
-you are collection multiple votes, for example if you have
+you are collecting votes for multiple things, for example if you have
 a site like goodreads or TripAdvisor.
 
 ## Collection Radio Buttons
