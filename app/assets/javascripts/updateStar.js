@@ -9,7 +9,11 @@ function clickStar() {
   input.setAttribute("name", name);
   input.setAttribute("value", score);
 
-  // Append to form
+  var oldScore = event.target.parentNode.getElementsByClassName("scored");
+  if (oldScore.length > 0) {
+    oldScore[0].classList.remove("scored")
+  }
+
   event.target.parentNode.appendChild(input);
 
   event.target.classList.toggle("scored");
