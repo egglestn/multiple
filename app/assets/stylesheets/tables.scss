@@ -42,6 +42,11 @@ td.first {
     color: green;
   }
 
+  .icon.scored ~ span:before {
+    content: "\f02e";
+    color: green;
+  }
+
   .icon:hover:before, .icon:hover ~ span:before {
     content: "\f02e";
     color: green;
