@@ -12,7 +12,7 @@
           <tr>
             <td class="first"><%= book %></td>
             <td>
-              <%= ff.collection_radio_buttons :score, BooksUser.scores, :last, :last, boolean_style: :inline do |rb| %>
+              <%= ff.collection_radio_buttons :score, BooksUser.scores, :last, :last do |rb| %>
                 <span title=<%= rb.object[0].humanize %>><%= rb.radio_button %></span>
               <% end %>
             </td>
