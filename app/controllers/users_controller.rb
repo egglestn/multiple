@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def edit
     @books = Book.all.order(:name)
     # Destroy previous scores and start again
+    # Useful for demo / prototype, but suggest you don't do this in a production system!
     @user.books_users.delete_all
 
     form
