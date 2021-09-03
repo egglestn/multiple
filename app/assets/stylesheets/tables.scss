@@ -16,6 +16,10 @@ td.first {
   text-align: left;
 }
 
+.vertical {
+  writing-mode: vertical-lr;
+}
+
 .scores {
   .book-score {
     cursor: pointer;

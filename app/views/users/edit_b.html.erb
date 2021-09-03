@@ -3,10 +3,18 @@
 <%= form_for(@user, html: { method: :put }) do |f| %>
   <table class="scores">
     <thead>
-      <th>Name</th>
+      <th>Title</th>
       <th>Score</th>
     </thead>
     <tbody>
+      <tr>
+        <td></td>
+        <td>
+          <% BooksUser.scores.keys.each do |score| %>
+            <span class="vertical"><%= score.humanize %></span>
+          <% end %>
+        </td>
+      </tr>
       <% @books.each do |book| %>
         <%= f.fields_for "books_user][#{book.id}" do |ff| %>
           <tr>
