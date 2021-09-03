@@ -26,6 +26,8 @@ td.first {
     cursor: pointer;
     padding: 2px;
 
+    // This is part of the infrastructure where the user hovers or selects one score
+    // and multiple scores are highlighted (eg select 3, highlights 1-2-3)
     unicode-bidi: bidi-override;
     direction: rtl;
   }
