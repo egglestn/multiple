@@ -1,7 +1,7 @@
 <h3>Styled radio buttons</h3>
 
 <%= form_for(@user, html: { method: :put }) do |f| %>
-  <table class="stars">
+  <table class="scores">
     <thead>
       <th>Name</th>
       <th>Score</th>
@@ -15,7 +15,7 @@
               <!-- CSS uses right-to-left, so the star index numbers need to be reversed -->
               <% star_index = 4 %>
               <% 5.times do %>
-                <span class="star" onClick="clickStar()" score=<%= star_index %> ></span>
+                <span class="icon" onClick="clickStar()" score=<%= star_index %> ></span>
                 <% star_index -= 1 %>
               <% end %>
             </td>

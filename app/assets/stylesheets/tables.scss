@@ -16,7 +16,7 @@ td.first {
   text-align: left;
 }
 
-.stars {
+.scores {
   .book-score {
     cursor: pointer;
     padding: 2px;
@@ -25,25 +25,25 @@ td.first {
     direction: rtl;
   }
 
-  .star {
+  .icon {
     width: unset;
     font-size: 20px;
     padding: 2px;
-    font-family: FontAwesome;
-    font-weight: 400;
+    font-family: "FontAwesome";
   }
 
-  .star:before {
-    content: "\2606";
+  .icon:before {
+    content: "\f097";
+    color: grey;
   }
 
-  .star.scored:before {
-    content: "\2605";
+  .icon.scored:before {
+    content: "\f02e";
     color: green;
   }
 
-  .star:hover:before, .star:hover ~ span:before {
-    content: "\2605";
+  .icon:hover:before, .icon:hover ~ span:before {
+    content: "\f02e";
     color: green;
   }
 }
