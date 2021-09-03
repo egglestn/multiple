@@ -12,11 +12,10 @@
           <tr>
             <td class="first"><%= book %></td>
             <td class="book-score" book=<%= book.id %>>
-              <% star = "☆" %>
               <!-- CSS uses right-to-left, so the star index numbers need to be reversed -->
               <% star_index = 4 %>
               <% 5.times do %>
-                <span class="star" onClick="clickStar()" score=<%= star_index %> ><%= star %></span>
+                <span class="star" onClick="clickStar()" score=<%= star_index %> ></span>
                 <% star_index -= 1 %>
               <% end %>
             </td>

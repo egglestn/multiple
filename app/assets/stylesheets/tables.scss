@@ -29,18 +29,22 @@ td.first {
     width: unset;
     font-size: 20px;
     padding: 2px;
+    font-family: FontAwesome;
+    font-weight: 400;
+  }
+
+  .star:before {
+    content: "\2606";
   }
 
   .star.scored:before {
     content: "\2605";
     color: green;
-    position: absolute;
   }
 
   .star:hover:before, .star:hover ~ span:before {
     content: "\2605";
     color: green;
-    position: absolute;
   }
 }
 
