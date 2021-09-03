@@ -16,7 +16,12 @@ td.first {
   text-align: left;
 }
 
-.stars {
+.vertical {
+  writing-mode: vertical-lr;
+  padding: 2px;
+}
+
+.scores {
   .book-score {
     cursor: pointer;
     padding: 2px;
@@ -25,22 +30,31 @@ td.first {
     direction: rtl;
   }
 
-  .star {
+  .icon {
     width: unset;
     font-size: 20px;
     padding: 2px;
+    font-family: "FontAwesome";
   }
 
-  .star.scored:before {
-    content: "\2605";
-    color: green;
-    position: absolute;
+  .icon:before {
+    content: "\f097";
+    color: grey;
   }
 
-  .star:hover:before, .star:hover ~ span:before {
-    content: "\2605";
+  .icon.scored:before {
+    content: "\f02e";
     color: green;
-    position: absolute;
+  }
+
+  .icon.scored ~ span:before {
+    content: "\f02e";
+    color: green;
+  }
+
+  .icon:hover:before, .icon:hover ~ span:before {
+    content: "\f02e";
+    color: green;
   }
 }
 

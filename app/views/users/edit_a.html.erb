@@ -3,16 +3,24 @@
 <%= form_for(@user, html: { method: :put }) do |f| %>
   <table>
     <thead>
-      <th>Name</th>
+      <th>Title</th>
       <th>Score</th>
     </thead>
     <tbody>
+      <tr>
+        <td></td>
+        <td>
+          <% BooksUser.scores.keys.each do |score| %>
+            <span class="vertical"><%= score.humanize %></span>
+          <% end %>
+        </td>
+      </tr>
       <% @books.each do |book| %>
         <%= f.fields_for "books_user][#{book.id}" do |ff| %>
           <tr>
             <td class="first"><%= book %></td>
             <td>
-              <%= ff.collection_radio_buttons :score, BooksUser.scores, :last, :last, boolean_style: :inline do |rb| %>
+              <%= ff.collection_radio_buttons :score, BooksUser.scores, :last, :last do |rb| %>
                 <span title=<%= rb.object[0].humanize %>><%= rb.radio_button %></span>
               <% end %>
             </td>
