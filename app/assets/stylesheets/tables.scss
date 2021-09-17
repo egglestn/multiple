@@ -40,23 +40,17 @@ td.first {
   }
 
   .icon:before {
-    content: "\f097";
+    content: "\f006";
     color: grey;
   }
 
-  .icon.scored:before {
-    content: "\f02e";
-    color: green;
-  }
-
-  .icon.scored ~ span:before {
-    content: "\f02e";
-    color: green;
+  .icon.scored:before, .icon.scored ~ span:before {
+    content: "\f005";
+    color: steelblue;
   }
 
   .icon:hover:before, .icon:hover ~ span:before {
-    content: "\f02e";
-    color: green;
+    content: "\f005";
+    color: steelblue;
   }
 }
-
