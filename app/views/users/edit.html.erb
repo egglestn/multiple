@@ -1,8 +1,41 @@
-<h3>Not here</h3>
+<h3>Collection radio buttons</h3>
 
-<p>
-  You probably want one of these
-</p>
+<p>This page uses rails collection_radio_buttons as it comes 'out of the box'.</p>
 
-<p><%= link_to "Collection radio buttons", edit_user_path(@user, form: :a) %></p>
-<p><%= link_to "Styled radio buttons", edit_user_path(@user, form: :b) %></p>
+<h4>Problems</h4>
+<p>The vertical align will be easily fixed in CSS</p>
+<p>Less obvious, but more challenging: there is only one hidden field to store the score for all the books_user
+join entries.</p>
+
+<h4<Warning</h4>
+<p>I have left out the save button from this page on purpose. If you try and save, it will break in the controller, which
+has adjustments for the edit_a and edit_b pages that are not compatible with this page.</p>
+
+<%= form_for(@user, html: { method: :put }) do |f| %>
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Score</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>
+          <% BooksUser.scores.keys.each do |score| %>
+            <span class="vertical"><%= score.humanize %></span>
+          <% end %>
+        </td>
+      </tr>
+      <% @books.each do |book| %>
+        <%= f.fields_for book.books_users.create do |ff| %>
+          <tr>
+            <td class="first"><%= book %></td>
+            <td>
+              <%= ff.collection_radio_buttons :score, BooksUser.scores, :last, :last %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
