@@ -8,6 +8,8 @@ You might use collection_radio_buttons where you are collecting votes for
 multiple things, for example if you have a review site like goodreads or 
 TripAdvisor.
 
+You can see a live demo at https://multiple-radio-buttons.herokuapp.com/
+
 ## Get started
 
 * Setup sqlite
